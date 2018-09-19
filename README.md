@@ -4,7 +4,9 @@
 
 ![](/src/drop.gif)
 
-- run
+## 使用
+
+### run
 ```swift
 + (instancetype)run:(void(^)(void))handler;
 USAction *action = [USAction run:^{
@@ -12,33 +14,33 @@ USAction *action = [USAction run:^{
 }];
 ```
 
-- move
+### move
 ```swift
 + (instancetype)moveTo:(CGPoint)point duration:(NSTimeInterval)interval;
 USAction *move = [USAction moveTo:CGPointZero duration:0.5];
 ```
-- wait
+### wait
 ```swift
 + (instancetype)wait:(NSTimeInterval)interval;
 USAction *wait = [USAction wait:0.2];
 ```
-- sequence
+### sequence
 ```swift
 + (instancetype)sequence:(NSArray<USAction *> *)actions;
  USAction *sequence = [USAction sequence:@[action1, action2, action3]];
 ```
-- repeat
+### repeat
 ```swift
 + (instancetype)repeat:(USAction *)action count:(NSInteger)count;
 USAction *repeat = [USAction repeat:sequence count:25];
 ```
 
-- repeatForEver
+### repeatForEver
 ```swift
 + (instancetype)repeatForEver:(USAction *)action;
 USAction *repeat = [USAction repeatForEver:sequence];
 ```
-- 嵌套使用示例
+### 嵌套示例
 ```swift
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -66,4 +68,10 @@ USAction *repeat = [USAction repeatForEver:sequence];
     node.image = [UIImage imageNamed:@"miss"];
     return node;
 }
+```
+
+## 安装
+```
+pod repo update
+pod 'USAction'
 ```
