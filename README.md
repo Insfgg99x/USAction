@@ -2,7 +2,7 @@
 # USAction
 类似SpriteKit的SKAction，你可以在UIKit上使用USAction，用法同SpriteKit的SKAction
 
-![](/drop.gif)
+![](/src/drop.gif)
 
 - run
 ```swift
